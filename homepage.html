@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OHSL — Olomouc Hockey Super League</title>
+<meta name="description" content="Oficiální web amatérské hokejové ligy OHSL v Olomouci. Výsledky, tabulka, kanadské bodování, soupisky týmů a aktuality.">
+<link rel="icon" href="assets/img/ohsl-foot.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=3">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M10 17h4M9 21h6M12 13v4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 10h16M10 10v9"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M5 5h14v15H5zM5 9h14M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+</svg>
+
+<header class="site-header">
+  <a class="brand-logo" href="index.html"><img src="assets/img/ohsl-logo.png" alt="OHSL — Olomouc Hockey Super League"></a>
+  <div class="partners-inline">
+    <img src="assets/img/partners/hanacka-sportovni.jpg" alt="Hanácká sportovní">
+    <img src="assets/img/partners/iph.jpg" alt="IPH — Investice Pojištění Haná">
+    <img src="assets/img/partners/olomoucky-denik.png" alt="Olomoucký deník.cz">
+    <img src="assets/img/partners/ddsport.jpg" alt="ddsport">
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Domů</a>
+      <a href="tymy.html">Týmy</a>
+      <a href="zapas.html">Zápasy</a>
+      <a href="bodovani.html">Statistiky</a>
+      <a href="#">Aktuality</a>
+      <a href="#">Ke stažení</a>
+      <a href="#">Partneři</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"></use></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- HERO CAROUSEL -->
+  <section class="hero" aria-label="Banner OHSL">
+    <div class="hero-track" id="heroTrack">
+      <img src="assets/img/hero.jpg" alt="Hráči OHSL v souboji a loga všech klubů ligy">
+      <img src="assets/img/hero-2.jpg" alt="Atmosféra zápasů OHSL">
+      <img src="assets/img/hero-3.jpg" alt="Týmy amatérské ligy OHSL">
+    </div>
+    <div class="overlay"></div>
+    <span class="hero-pill">10. sezóna · 2025/26</span>
+    <button class="hero-arrow prev" aria-label="Předchozí"><svg class="icon"><use href="#i-prev"></use></svg></button>
+    <button class="hero-arrow next" aria-label="Další"><svg class="icon"><use href="#i-next"></use></svg></button>
+    <div class="content">
+      <div class="cta">
+        <a class="btn btn-primary" href="tabulka.html"><svg class="icon"><use href="#i-table"></use></svg> Tabulka</a>
+        <a class="btn btn-ghost" href="#"><svg class="icon"><use href="#i-calendar"></use></svg> Rozpis zápasů</a>
+      </div>
+      <div class="hero-dots" id="heroDots">
+        <button class="active" aria-label="Snímek 1"></button>
+        <button aria-label="Snímek 2"></button>
+        <button aria-label="Snímek 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="row" style="margin-top:16px">
+
+    <div class="col-md-8">
+      <div class="vstack">
+
+        <section class="matches-module">
+          <div class="mm-head">
+            <div class="mm-tabs">
+              <button class="tab-btn active" data-pane="vysledky">Výsledky</button>
+              <button class="tab-btn" data-pane="program">Program</button>
+            </div>
+          </div>
+          <div class="mm-body">
+
+            <div class="mm-pane active" id="pane-vysledky">
+              <div class="matches-list">
+                <a class="match-row res-row" href="zapas.html">
+                  <span class="mr-date">Fin · 8. 4.</span>
+                  <span class="mr-home"><span class="mr-name">Hanácká legie</span><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt="Hanácká legie"></span></span>
+                  <span class="mr-scores"><span class="mr-score">3</span><span class="mr-periods">(1:1, 1:2, 1:1)</span><span class="mr-score">4</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt="Oriflame"></span><span class="mr-name">Oriflame</span></span>
+                </a>
+                <a class="match-row res-row" href="#">
+                  <span class="mr-date">Fin · 4. 4.</span>
+                  <span class="mr-home"><span class="mr-name">Oriflame</span><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt="Oriflame"></span></span>
+                  <span class="mr-scores"><span class="mr-score">2</span><span class="mr-periods">(1:0, 0:0, 1:1)</span><span class="mr-score">1</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt="Hanácká legie"></span><span class="mr-name">Hanácká legie</span></span>
+                </a>
+                <a class="match-row res-row" href="#">
+                  <span class="mr-date">Fin · 1. 4.</span>
+                  <span class="mr-home"><span class="mr-name">Oriflame</span><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt="Oriflame"></span></span>
+                  <span class="mr-scores"><span class="mr-score">5</span><span class="mr-periods">(2:0, 2:1, 1:1)</span><span class="mr-score">2</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt="Hanácká legie"></span><span class="mr-name">Hanácká legie</span></span>
+                </a>
+                <a class="match-row res-row" href="#">
+                  <span class="mr-date">SF · 28. 3.</span>
+                  <span class="mr-home"><span class="mr-name">HC 61 Olomouc</span><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt="HC 61"></span></span>
+                  <span class="mr-scores"><span class="mr-score">1</span><span class="mr-periods">(0:1, 1:1, 0:0)</span><span class="mr-score">2</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt="Oriflame"></span><span class="mr-name">Oriflame</span></span>
+                </a>
+                <a class="match-row res-row" href="#">
+                  <span class="mr-date">SF · 26. 3.</span>
+                  <span class="mr-home"><span class="mr-name">Beerboys</span><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt="Beerboys"></span></span>
+                  <span class="mr-scores"><span class="mr-score">1</span><span class="mr-periods">(0:1, 1:1, 0:1)</span><span class="mr-score">3</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt="Hanácká legie"></span><span class="mr-name">Hanácká legie</span></span>
+                </a>
+                <a class="match-row res-row" href="#">
+                  <span class="mr-date">ČF · 22. 3.</span>
+                  <span class="mr-home"><span class="mr-name">Kačeři Litovel</span><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt="Kačeři"></span></span>
+                  <span class="mr-scores"><span class="mr-score">3</span><span class="mr-periods">(0:0, 2:1, 1:0)</span><span class="mr-score">1</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt="HC 61"></span><span class="mr-name">HC 61 Olomouc</span></span>
+                </a>
+                <a class="match-row res-row" href="#">
+                  <span class="mr-date">ČF · 20. 3.</span>
+                  <span class="mr-home"><span class="mr-name">Kačeři Litovel</span><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt="Kačeři"></span></span>
+                  <span class="mr-scores"><span class="mr-score">4</span><span class="mr-periods">(1:1, 2:0, 1:1)</span><span class="mr-score">2</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt="Stars"></span><span class="mr-name">Stars Válec</span></span>
+                </a>
+                <a class="match-row res-row" href="#">
+                  <span class="mr-date">ČF · 18. 3.</span>
+                  <span class="mr-home"><span class="mr-name">Oriflame</span><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt="Oriflame"></span></span>
+                  <span class="mr-scores"><span class="mr-score">3</span><span class="mr-periods">(1:0, 1:2, 1:0)</span><span class="mr-score">2</span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt="Medojedi"></span><span class="mr-name">Medojedi</span></span>
+                </a>
+              </div>
+              <a class="matches-more" href="#">Všechny výsledky <svg class="icon"><use href="#i-chevron"></use></svg></a>
+            </div>
+
+            <div class="mm-pane" id="pane-program">
+              <div class="matches-list">
+                <a class="match-row prog-row" href="#">
+                  <span class="mr-home"><span class="mr-name">Kačeři Litovel</span><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt="Kačeři Litovel"></span></span>
+                  <span class="mr-center"><span class="p-venue">ZS Litovel</span><span class="p-datetime"><span class="p-date">so 13. 9.</span><span class="p-time">18:00</span></span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/kohoti-olomouc.png" alt="Kohóti Olomouc"></span><span class="mr-name">Kohóti Olomouc</span></span>
+                </a>
+                <a class="match-row prog-row" href="#">
+                  <span class="mr-home"><span class="mr-name">Beerboys Prostějov</span><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt="Beerboys"></span></span>
+                  <span class="mr-center"><span class="p-venue">ZS Prostějov</span><span class="p-datetime"><span class="p-date">ne 14. 9.</span><span class="p-time">19:30</span></span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt="Stars Válec"></span><span class="mr-name">Stars Válec</span></span>
+                </a>
+                <a class="match-row prog-row" href="#">
+                  <span class="mr-home"><span class="mr-name">HC 61 Olomouc</span><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt="HC 61"></span></span>
+                  <span class="mr-center"><span class="p-venue">ZS Olomouc</span><span class="p-datetime"><span class="p-date">so 20. 9.</span><span class="p-time">17:00</span></span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt="Medojedi"></span><span class="mr-name">Medojedi Chválkovice</span></span>
+                </a>
+                <a class="match-row prog-row" href="#">
+                  <span class="mr-home"><span class="mr-name">Hanácká legie</span><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt="Hanácká legie"></span></span>
+                  <span class="mr-center"><span class="p-venue">ZS Olomouc</span><span class="p-datetime"><span class="p-date">ne 21. 9.</span><span class="p-time">18:30</span></span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/old-boys.png" alt="Old Boys"></span><span class="mr-name">Old Boys</span></span>
+                </a>
+                <a class="match-row prog-row" href="#">
+                  <span class="mr-home"><span class="mr-name">Hřebci Skrbeň</span><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt="Hřebci Skrbeň"></span></span>
+                  <span class="mr-center"><span class="p-venue">ZS Olomouc</span><span class="p-datetime"><span class="p-date">so 27. 9.</span><span class="p-time">17:30</span></span></span>
+                  <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/jesteri-twin.png" alt="Ještěři TWIN"></span><span class="mr-name">Ještěři TWIN</span></span>
+                </a>
+              </div>
+              <a class="matches-more" href="#">Celý rozpis zápasů <svg class="icon"><use href="#i-chevron"></use></svg></a>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Aktuality</h2><a class="hint" href="#" style="font-weight:600">Všechny ›</a></div>
+          <a class="article" href="#">
+            <span class="date">8. 1. 2026</span>
+            <h3>Nadstavbová část</h3>
+            <p>Základní část aktuálního ročníku OHSL je u konce a nyní nás nově čeká nadstavbová část. Tato novinka byla letos zavedena z časového důvodu, abychom mohli odehrát termínově celý ročník…</p>
+            <span class="more">Číst více <svg class="icon"><use href="#i-chevron"></use></svg></span>
+          </a>
+          <a class="article" href="#">
+            <span class="date">8. 9. 2025</span>
+            <h3>10. sezóna OHSL</h3>
+            <p>Ve středu 10. 9. začíná 10. jubilejní sezóna OHSL, prvním zápasem mezi týmy Kačeři Litovel a Kohóti Olomouc. Soutěž bude hraná jednokolově včetně nadstavby a play-off…</p>
+            <span class="more">Číst více <svg class="icon"><use href="#i-chevron"></use></svg></span>
+          </a>
+          <a class="article" href="#">
+            <span class="date">2. 9. 2025</span>
+            <h3>Nové týmy vstupují do ligy</h3>
+            <p>Před startem jubilejního ročníku se představují nováčci soutěže a hlásí se i posílené týmy s ambicemi na medaile. Podívejte se, kdo letos zabojuje o titul…</p>
+            <span class="more">Číst více <svg class="icon"><use href="#i-chevron"></use></svg></span>
+          </a>
+          <a class="article" href="#">
+            <span class="date">14. 4. 2025</span>
+            <h3>Mistr ligy OHSL 2024/25</h3>
+            <p>Sezóna 2024/25 má svého šampiona. Podívejte se na ohlédnutí za vyvrcholením play-off a kompletní finálovou sérií, která rozhodla o titulu…</p>
+            <span class="more">Číst více <svg class="icon"><use href="#i-chevron"></use></svg></span>
+          </a>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="vstack">
+
+        <section class="panel">
+          <div class="panel-head"><h2>Tabulka OHSL</h2><span class="hint">po 10. kole</span></div>
+          <table class="stat-table">
+            <thead><tr><th class="rank">#</th><th class="l">Klub</th><th>Z</th><th>B</th></tr></thead>
+            <tbody>
+              <tr class="q"><td class="rank">1</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři Litovel</span></td><td>10</td><td class="pts">30</td></tr>
+              <tr class="q"><td class="rank">2</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span>HC 61 Olomouc</span></td><td>10</td><td class="pts">22</td></tr>
+              <tr class="q"><td class="rank">3</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys Prostějov</span></td><td>10</td><td class="pts">21</td></tr>
+              <tr class="q"><td class="rank">4</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Hanácká legie</span></td><td>10</td><td class="pts">19</td></tr>
+              <tr class="q"><td class="rank">5</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt=""></span>Hřebci Skrbeň</span></td><td>10</td><td class="pts">18</td></tr>
+              <tr class="q"><td class="rank">6</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/old-boys.png" alt=""></span>Old Boys</span></td><td>10</td><td class="pts">13</td></tr>
+              <tr class="q"><td class="rank">7</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame Software</span></td><td>10</td><td class="pts">12</td></tr>
+              <tr class="q"><td class="rank">8</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Medojedi Chválkovice</span></td><td>10</td><td class="pts">11</td></tr>
+              <tr><td class="rank">9</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt=""></span>Stars Válec</span></td><td>10</td><td class="pts">10</td></tr>
+              <tr><td class="rank">10</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kohoti-olomouc.png" alt=""></span>Kohóti Olomouc</span></td><td>10</td><td class="pts">3</td></tr>
+              <tr class="rel"><td class="rank">11</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/jesteri-twin.png" alt=""></span>Ještěři TWIN</span></td><td>10</td><td class="pts">1</td></tr>
+            </tbody>
+          </table>
+          <div class="panel-foot"><a href="tabulka.html">Podrobná tabulka <svg class="icon"><use href="#i-chevron"></use></svg></a></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Kanadské bodování</h2><span class="hint">body</span></div>
+          <table class="stat-table">
+            <thead><tr><th class="rank">#</th><th class="l">Hráč</th><th>B</th></tr></thead>
+            <tbody>
+              <tr><td class="rank">1</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>M. Kaczmarczyk</span></td><td class="pts">19</td></tr>
+              <tr><td class="rank">2</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Petr Palán</span></td><td class="pts">17</td></tr>
+              <tr><td class="rank">3</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Filip Křen</span></td><td class="pts">15</td></tr>
+              <tr><td class="rank">4</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Š. Karafiát</span></td><td class="pts">15</td></tr>
+              <tr><td class="rank">5</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>M. Sklenář</span></td><td class="pts">14</td></tr>
+              <tr><td class="rank">6</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Petr Srnec</span></td><td class="pts">14</td></tr>
+              <tr><td class="rank">7</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt=""></span>M. Jančík</span></td><td class="pts">14</td></tr>
+            </tbody>
+          </table>
+          <div class="panel-foot"><a href="bodovani.html">Celé pořadí <svg class="icon"><use href="#i-chevron"></use></svg></a></div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/img/ohsl-foot.png" alt="OHSL">
+  <div><a class="social" href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a></div>
+  OHSL — Olomouc Hockey Super League · © 2026
+</footer>
+
+<script>
+  var t = document.getElementById('navToggle'), l = document.getElementById('navLinks');
+  t.addEventListener('click', function () {
+    var open = l.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.tab-btn').forEach(function (x) { x.classList.remove('active'); });
+      document.querySelectorAll('.mm-pane').forEach(function (p) { p.classList.remove('active'); });
+      b.classList.add('active');
+      document.getElementById('pane-' + b.dataset.pane).classList.add('active');
+    });
+  });
+
+  (function () {
+    var track = document.getElementById('heroTrack');
+    if (!track) return;
+    var slides = track.children.length;
+    var dots = document.querySelectorAll('#heroDots button');
+    var i = 0, timer;
+    function go(n) {
+      i = (n + slides) % slides;
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
+      dots.forEach(function (d, k) { d.classList.toggle('active', k === i); });
+    }
+    function start() { timer = setInterval(function () { go(i + 1); }, 5000); }
+    function stop() { clearInterval(timer); }
+    document.querySelector('.hero-arrow.next').addEventListener('click', function () { go(i + 1); });
+    document.querySelector('.hero-arrow.prev').addEventListener('click', function () { go(i - 1); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); }); });
+    var hero = document.querySelector('.hero');
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    start();
+  })();
+</script>
+</body>
+</html>

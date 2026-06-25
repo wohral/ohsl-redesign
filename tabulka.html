@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabulka — OHSL 2025/26</title>
+<link rel="icon" href="assets/img/ohsl-foot.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=3">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-table" viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 10h16M10 10v9"/></symbol>
+</svg>
+
+<header class="site-header">
+  <a class="brand-logo" href="index.html"><img src="assets/img/ohsl-logo.png" alt="OHSL — Olomouc Hockey Super League"></a>
+  <div class="partners-inline">
+    <img src="assets/img/partners/hanacka-sportovni.jpg" alt="Hanácká sportovní">
+    <img src="assets/img/partners/iph.jpg" alt="IPH">
+    <img src="assets/img/partners/olomoucky-denik.png" alt="Olomoucký deník.cz">
+    <img src="assets/img/partners/ddsport.jpg" alt="ddsport">
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Domů</a>
+      <a href="tymy.html">Týmy</a>
+      <a href="zapas.html">Zápasy</a>
+      <a href="bodovani.html" class="active">Statistiky</a>
+      <a href="#">Aktuality</a>
+      <a href="#">Ke stažení</a>
+      <a href="#">Partneři</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"></use></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="index.html">Domů</a><span class="sep">›</span>
+    <a href="#">Statistiky</a><span class="sep">›</span>
+    <span>Tabulka</span>
+  </nav>
+
+  <div class="page-hd">
+    <div>
+      <h1><svg class="icon" style="width:1.1em;height:1.1em"></svg> Tabulka OHSL</h1>
+      <span class="sub">Základní část · 10. kolo ze 10</span>
+    </div>
+    <select class="season-select">
+      <option selected>2025/26 — 10. sezóna</option>
+      <option>2024/25 — 9. sezóna</option>
+      <option>2023/24 — 8. sezóna</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <section class="panel" style="overflow-x:auto">
+        <table class="stat-table standings-table" style="min-width:560px">
+          <thead>
+            <tr>
+              <th class="rank">#</th>
+              <th class="l">Klub</th>
+              <th title="Odehráno zápasů">Z</th>
+              <th title="Výhry">V</th>
+              <th title="Remízy">R</th>
+              <th title="Prohry">P</th>
+              <th title="Skóre (vstřelené:obdržené)">Skóre</th>
+              <th title="Body">B</th>
+              <th title="Forma — posledních 5 zápasů" style="min-width:100px">Forma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="q">
+              <td class="rank">1</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span><a href="tymy.html">Kačeři Litovel</a></span></td>
+              <td>10</td><td>10</td><td>0</td><td>0</td>
+              <td class="score">58:23</td><td class="pts">30</td>
+              <td><div class="form-dots"><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot w">V</span></div></td>
+            </tr>
+            <tr class="q">
+              <td class="rank">2</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span><a href="tymy.html">HC 61 Olomouc</a></span></td>
+              <td>10</td><td>7</td><td>1</td><td>2</td>
+              <td class="score">44:31</td><td class="pts">22</td>
+              <td><div class="form-dots"><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot d">R</span><span class="form-dot w">V</span><span class="form-dot l">P</span></div></td>
+            </tr>
+            <tr class="q">
+              <td class="rank">3</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span><a href="tymy.html">Beerboys Prostějov</a></span></td>
+              <td>10</td><td>7</td><td>0</td><td>3</td>
+              <td class="score">51:38</td><td class="pts">21</td>
+              <td><div class="form-dots"><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot l">P</span></div></td>
+            </tr>
+            <tr class="q">
+              <td class="rank">4</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span><a href="tymy.html">Hanácká legie</a></span></td>
+              <td>10</td><td>6</td><td>1</td><td>3</td>
+              <td class="score">46:35</td><td class="pts">19</td>
+              <td><div class="form-dots"><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot w">V</span><span class="form-dot w">V</span></div></td>
+            </tr>
+            <tr class="q">
+              <td class="rank">5</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt=""></span><a href="tymy.html">Hřebci Skrbeň</a></span></td>
+              <td>10</td><td>6</td><td>0</td><td>4</td>
+              <td class="score">42:37</td><td class="pts">18</td>
+              <td><div class="form-dots"><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot w">V</span><span class="form-dot w">V</span><span class="form-dot l">P</span></div></td>
+            </tr>
+            <tr class="q">
+              <td class="rank">6</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/old-boys.png" alt=""></span><a href="tymy.html">Old Boys</a></span></td>
+              <td>10</td><td>4</td><td>1</td><td>5</td>
+              <td class="score">35:41</td><td class="pts">13</td>
+              <td><div class="form-dots"><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot l">P</span></div></td>
+            </tr>
+            <tr class="q">
+              <td class="rank">7</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span><a href="tymy.html">Oriflame Software</a></span></td>
+              <td>10</td><td>4</td><td>0</td><td>6</td>
+              <td class="score">38:44</td><td class="pts">12</td>
+              <td><div class="form-dots"><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot l">P</span><span class="form-dot w">V</span><span class="form-dot l">P</span></div></td>
+            </tr>
+            <tr class="q">
+              <td class="rank">8</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span><a href="tymy.html">Medojedi Chválkovice</a></span></td>
+              <td>10</td><td>3</td><td>2</td><td>5</td>
+              <td class="score">33:40</td><td class="pts">11</td>
+              <td><div class="form-dots"><span class="form-dot l">P</span><span class="form-dot d">R</span><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot d">R</span></div></td>
+            </tr>
+            <tr>
+              <td class="rank">9</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt=""></span><a href="tymy.html">Stars Válec</a></span></td>
+              <td>10</td><td>3</td><td>1</td><td>6</td>
+              <td class="score">29:45</td><td class="pts">10</td>
+              <td><div class="form-dots"><span class="form-dot l">P</span><span class="form-dot l">P</span><span class="form-dot w">V</span><span class="form-dot l">P</span><span class="form-dot d">R</span></div></td>
+            </tr>
+            <tr>
+              <td class="rank">10</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kohoti-olomouc.png" alt=""></span><a href="tymy.html">Kohóti Olomouc</a></span></td>
+              <td>10</td><td>1</td><td>0</td><td>9</td>
+              <td class="score">22:58</td><td class="pts">3</td>
+              <td><div class="form-dots"><span class="form-dot l">P</span><span class="form-dot l">P</span><span class="form-dot l">P</span><span class="form-dot w">V</span><span class="form-dot l">P</span></div></td>
+            </tr>
+            <tr class="rel">
+              <td class="rank">11</td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/jesteri-twin.png" alt=""></span><a href="tymy.html">Ještěři TWIN</a></span></td>
+              <td>10</td><td>0</td><td>1</td><td>9</td>
+              <td class="score">18:55</td><td class="pts">1</td>
+              <td><div class="form-dots"><span class="form-dot d">R</span><span class="form-dot l">P</span><span class="form-dot l">P</span><span class="form-dot l">P</span><span class="form-dot l">P</span></div></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="panel-foot" style="text-align:left;display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--mu)">
+          <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--head);display:inline-block"></span> Postup do play-off (1.–8. místo)</span>
+          <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--loss);display:inline-block"></span> Mimo play-off</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-md-4">
+      <div class="vstack">
+        <section class="panel">
+          <div class="panel-head"><h2>Play-off 2025/26</h2></div>
+          <ul class="info-list" style="list-style:none;margin:0;padding:0">
+            <li style="padding:10px 16px;border-bottom:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between"><span style="color:var(--mu);font-size:12.5px;font-weight:600">Čtvrtfinále</span><span style="font-weight:600">8 týmů</span></li>
+            <li style="padding:10px 16px;border-bottom:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between"><span style="color:var(--mu);font-size:12.5px;font-weight:600">Semifinále</span><span style="font-weight:600">4 týmy</span></li>
+            <li style="padding:10px 16px;border-bottom:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between"><span style="color:var(--mu);font-size:12.5px;font-weight:600">Finále</span><span style="font-weight:700;color:var(--brand)">Probíhá</span></li>
+            <li style="padding:10px 16px;font-size:14px;display:flex;justify-content:space-between"><span style="color:var(--mu);font-size:12.5px;font-weight:600">Mistr</span><span style="font-weight:600;color:var(--mu)">—</span></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Nejlepší střelci</h2><a class="hint" href="bodovani.html" style="font-weight:600">Celé pořadí ›</a></div>
+          <table class="stat-table">
+            <thead><tr><th class="rank">#</th><th class="l">Hráč</th><th>B</th></tr></thead>
+            <tbody>
+              <tr><td class="rank">1</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Petr Palán</span></td><td class="pts">24</td></tr>
+              <tr><td class="rank">2</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>M. Kaczmarczyk</span></td><td class="pts">19</td></tr>
+              <tr><td class="rank">3</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt=""></span>M. Jančík</span></td><td class="pts">17</td></tr>
+              <tr><td class="rank">4</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt=""></span>M. Sklenář</span></td><td class="pts">16</td></tr>
+              <tr><td class="rank">5</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>M. Tinkl</span></td><td class="pts">16</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <img src="assets/img/ohsl-foot.png" alt="OHSL">
+  <div><a class="social" href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a></div>
+  OHSL — Olomouc Hockey Super League · © 2026
+</footer>
+
+<script>
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+</script>
+</body>
+</html>

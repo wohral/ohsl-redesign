@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oriflame vs Hanácká legie — Finále, 8. 4. 2026 — OHSL</title>
+<link rel="icon" href="assets/img/ohsl-foot.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=3">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu"    viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-trophy"  viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M10 17h4M9 21h6M12 13v4"/></symbol>
+  <symbol id="i-pin"     viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-clock"   viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-info"    viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 12v4"/></symbol>
+  <symbol id="i-users"   viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 3v6h6"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/></symbol>
+  <!-- Puk (hokejový kotouč) -->
+  <symbol id="i-puck" viewBox="0 0 20 20">
+    <ellipse cx="10" cy="10" rx="9" ry="5.5" fill="#14181d"/>
+    <ellipse cx="10" cy="8.5" rx="9" ry="5.5" fill="#2a2a2a"/>
+    <ellipse cx="10" cy="8.5" rx="7" ry="3.8" fill="#1a1a1a"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <a class="brand-logo" href="index.html"><img src="assets/img/ohsl-logo.png" alt="OHSL"></a>
+  <div class="partners-inline">
+    <img src="assets/img/partners/hanacka-sportovni.jpg" alt="Hanácká sportovní">
+    <img src="assets/img/partners/iph.jpg" alt="IPH">
+    <img src="assets/img/partners/olomoucky-denik.png" alt="Olomoucký deník.cz">
+    <img src="assets/img/partners/ddsport.jpg" alt="ddsport">
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Domů</a>
+      <a href="tymy.html">Týmy</a>
+      <a href="zapas.html" class="active">Zápasy</a>
+      <a href="bodovani.html">Statistiky</a>
+      <a href="#">Aktuality</a>
+      <a href="#">Ke stažení</a>
+      <a href="#">Partneři</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"></use></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="index.html">Domů</a><span class="sep">›</span>
+    <a href="#">Zápasy</a><span class="sep">›</span>
+    <span>Oriflame vs Hanácká legie</span>
+  </nav>
+
+  <!-- SCOREBOARD -->
+  <div class="scoreboard">
+    <div class="sb-inner">
+      <div class="sb-team-home">
+        <span class="sb-logo"><img src="assets/img/teams/oriflame-software.png" alt="Oriflame Software"></span>
+        <span class="sb-name">Oriflame Software</span>
+      </div>
+      <div class="sb-center">
+        <div class="sb-result">
+          <span class="sb-score">4</span>
+          <span class="sb-colon">:</span>
+          <span class="sb-score">3</span>
+        </div>
+        <span class="sb-badge"><svg class="icon"><use href="#i-trophy"></use></svg> Finále · 4. zápas</span>
+      </div>
+      <div class="sb-team-away">
+        <span class="sb-logo"><img src="assets/img/teams/hanacka-legie.png" alt="Hanácká legie"></span>
+        <span class="sb-name">Hanácká legie</span>
+      </div>
+    </div>
+    <div class="sb-periods-row">
+      <div class="sb-period"><span class="pl">1. třetina</span><span class="pv">1 : 1</span></div>
+      <div class="sb-period"><span class="pl">2. třetina</span><span class="pv">1 : 1</span></div>
+      <div class="sb-period"><span class="pl">3. třetina</span><span class="pv">2 : 1</span></div>
+      <div class="sb-period"><span class="pl">Celkem</span><span class="pv">4 : 3</span></div>
+    </div>
+    <div class="sb-meta">
+      <span><svg class="icon"><use href="#i-clock"></use></svg> <strong>8. dubna 2026</strong> · 18:00</span>
+      <span><svg class="icon"><use href="#i-pin"></use></svg> ZS Olomouc</span>
+      <span><svg class="icon"><use href="#i-trophy"></use></svg> Oriflame vede sérii <strong>2 – 1</strong></span>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:16px">
+
+    <div class="col-md-8">
+      <div class="vstack">
+
+        <!-- PRŮBĚH ZÁPASU — kombinovaná osa -->
+        <section class="panel" style="overflow:hidden">
+          <div class="panel-head" style="border-bottom:2px solid var(--line)">
+            <h2>Průběh zápasu</h2>
+            <div style="display:flex;gap:16px;font-size:12.5px;font-weight:700;color:var(--mu)">
+              <span style="display:flex;align-items:center;gap:5px">
+                <span class="tl-icon" style="width:20px;height:20px;display:inline-grid;place-items:center;background:#14181d;border-radius:50%">
+                  <svg width="12" height="12" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+                </span> Gól
+              </span>
+              <span style="display:flex;align-items:center;gap:5px">
+                <span class="tl-icon-pen" style="width:20px;height:14px;display:inline-grid;place-items:center;background:var(--loss);border-radius:3px;color:#fff;font-size:9px;font-weight:800">2'</span> Trest
+              </span>
+            </div>
+          </div>
+
+          <!-- Domácí / Hosté hlavička -->
+          <div style="display:grid;grid-template-columns:1fr 60px 1fr;padding:8px 16px;background:var(--s2);border-bottom:1px solid var(--line)">
+            <span style="font-size:12px;font-weight:700;color:var(--head);text-align:right;display:flex;align-items:center;justify-content:flex-end;gap:6px">
+              <span class="tlogo" style="width:22px;height:22px"><img src="assets/img/teams/oriflame-software.png" alt="" style="width:18px;height:18px;object-fit:contain"></span>Oriflame
+            </span>
+            <span></span>
+            <span style="font-size:12px;font-weight:700;color:var(--head);display:flex;align-items:center;gap:6px">
+              <span class="tlogo" style="width:22px;height:22px"><img src="assets/img/teams/hanacka-legie.png" alt="" style="width:18px;height:18px;object-fit:contain"></span>Han. legie
+            </span>
+          </div>
+
+          <!-- 1. TŘETINA -->
+          <div class="tl-period">1. třetina</div>
+
+          <!-- 8' Trest Novák (home) -->
+          <div class="tl-row">
+            <div class="tl-home">
+              <span class="tl-player">J. Novák</span>
+              <span class="tl-detail">2 minuty</span>
+            </div>
+            <div class="tl-center">
+              <span class="tl-time">8'</span>
+              <span class="tl-icon-pen">2'</span>
+            </div>
+            <div class="tl-away"></div>
+          </div>
+
+          <!-- 13' Gól Křen (home) 1:0 -->
+          <div class="tl-row">
+            <div class="tl-home">
+              <span class="tl-player"><a href="hrac.html" style="color:var(--head);font-weight:700;text-decoration:none">Filip Křen</a></span>
+              <span class="tl-detail">Asist: J. Novák</span>
+              <span class="tl-state">1 : 0</span>
+            </div>
+            <div class="tl-center">
+              <span class="tl-time">13'</span>
+              <span class="tl-icon">
+                <svg width="14" height="14" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+              </span>
+            </div>
+            <div class="tl-away"></div>
+          </div>
+
+          <!-- 17' Gól Kaczmarczyk (away) 1:1 -->
+          <div class="tl-row">
+            <div class="tl-home"></div>
+            <div class="tl-center">
+              <span class="tl-time">17'</span>
+              <span class="tl-icon">
+                <svg width="14" height="14" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+              </span>
+            </div>
+            <div class="tl-away">
+              <span class="tl-player">M. Kaczmarczyk</span>
+              <span class="tl-detail">Asist: P. Srnec</span>
+              <span class="tl-state">1 : 1</span>
+            </div>
+          </div>
+
+          <!-- 2. TŘETINA -->
+          <div class="tl-period">2. třetina</div>
+
+          <!-- 22' Trest Vohraník (away) -->
+          <div class="tl-row">
+            <div class="tl-home"></div>
+            <div class="tl-center">
+              <span class="tl-time">22'</span>
+              <span class="tl-icon-pen">2'</span>
+            </div>
+            <div class="tl-away">
+              <span class="tl-player">M. Vohraník</span>
+              <span class="tl-detail">2 minuty</span>
+            </div>
+          </div>
+
+          <!-- 28' Gól Malý (home) 2:1 -->
+          <div class="tl-row">
+            <div class="tl-home">
+              <span class="tl-player">Jan Malý</span>
+              <span class="tl-detail">Asist: T. Blaha</span>
+              <span class="tl-state">2 : 1</span>
+            </div>
+            <div class="tl-center">
+              <span class="tl-time">28'</span>
+              <span class="tl-icon">
+                <svg width="14" height="14" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+              </span>
+            </div>
+            <div class="tl-away"></div>
+          </div>
+
+          <!-- 35' Gól Tinkl (away) 2:2 -->
+          <div class="tl-row">
+            <div class="tl-home"></div>
+            <div class="tl-center">
+              <span class="tl-time">35'</span>
+              <span class="tl-icon">
+                <svg width="14" height="14" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+              </span>
+            </div>
+            <div class="tl-away">
+              <span class="tl-player">Michal Tinkl</span>
+              <span class="tl-detail">Asist: P. Srnec</span>
+              <span class="tl-state">2 : 2</span>
+            </div>
+          </div>
+
+          <!-- 3. TŘETINA -->
+          <div class="tl-period">3. třetina</div>
+
+          <!-- 41' Trest Havel (home) -->
+          <div class="tl-row">
+            <div class="tl-home">
+              <span class="tl-player">J. Havel</span>
+              <span class="tl-detail">2 minuty</span>
+            </div>
+            <div class="tl-center">
+              <span class="tl-time">41'</span>
+              <span class="tl-icon-pen">2'</span>
+            </div>
+            <div class="tl-away"></div>
+          </div>
+
+          <!-- 45' Gól Krejčí (home) 3:2 -->
+          <div class="tl-row">
+            <div class="tl-home">
+              <span class="tl-player">O. Krejčí</span>
+              <span class="tl-detail">Asist: T. Blaha</span>
+              <span class="tl-state">3 : 2</span>
+            </div>
+            <div class="tl-center">
+              <span class="tl-time">45'</span>
+              <span class="tl-icon">
+                <svg width="14" height="14" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+              </span>
+            </div>
+            <div class="tl-away"></div>
+          </div>
+
+          <!-- 52' Gól Srnec (away) 3:3 -->
+          <div class="tl-row">
+            <div class="tl-home"></div>
+            <div class="tl-center">
+              <span class="tl-time">52'</span>
+              <span class="tl-icon">
+                <svg width="14" height="14" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+              </span>
+            </div>
+            <div class="tl-away">
+              <span class="tl-player">Petr Srnec</span>
+              <span class="tl-detail">Asist: M. Kaczmarczyk</span>
+              <span class="tl-state">3 : 3</span>
+            </div>
+          </div>
+
+          <!-- 54' Trest Pánek (away) -->
+          <div class="tl-row">
+            <div class="tl-home"></div>
+            <div class="tl-center">
+              <span class="tl-time">54'</span>
+              <span class="tl-icon-pen">2'</span>
+            </div>
+            <div class="tl-away">
+              <span class="tl-player">L. Pánek</span>
+              <span class="tl-detail">2 minuty</span>
+            </div>
+          </div>
+
+          <!-- 58' Gól Blaha (home) 4:3 -->
+          <div class="tl-row">
+            <div class="tl-home">
+              <span class="tl-player">Tomáš Blaha</span>
+              <span class="tl-detail">Asist: F. Křen</span>
+              <span class="tl-state">4 : 3</span>
+            </div>
+            <div class="tl-center">
+              <span class="tl-time">58'</span>
+              <span class="tl-icon">
+                <svg width="14" height="14" viewBox="0 0 20 20"><use href="#i-puck"/></svg>
+              </span>
+            </div>
+            <div class="tl-away"></div>
+          </div>
+        </section>
+
+        <!-- SESTAVY — tabulkový formát -->
+        <section class="panel">
+          <div class="panel-head">
+            <h2><svg class="icon"><use href="#i-users"></use></svg> Sestavy</h2>
+          </div>
+          <div class="lineup-wrap">
+
+            <!-- ORIFLAME -->
+            <div class="lineup-col">
+              <div class="lineup-col-head">
+                <span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>
+                Oriflame Software
+              </div>
+              <table class="lineup-table">
+                <tbody>
+                  <tr class="lineup-group"><td colspan="2">Brankáři</td></tr>
+                  <tr><td class="jersey">1</td><td>Jan Janda</td></tr>
+                  <tr class="lineup-group"><td colspan="2">Obránci</td></tr>
+                  <tr><td class="jersey">4</td><td><a href="hrac.html">Jiří Novák</a></td></tr>
+                  <tr><td class="jersey">5</td><td>Jan Havel</td></tr>
+                  <tr><td class="jersey">6</td><td>Tomáš Blaha</td></tr>
+                  <tr><td class="jersey">7</td><td>Ondřej Krejčí</td></tr>
+                  <tr><td class="jersey">8</td><td>Pavel Mašek</td></tr>
+                  <tr><td class="jersey">3</td><td>Martin Procházka</td></tr>
+                  <tr class="lineup-group"><td colspan="2">Útočníci</td></tr>
+                  <tr><td class="jersey">9</td><td><a href="hrac.html">Filip Křen</a></td></tr>
+                  <tr><td class="jersey">10</td><td>Jan Malý</td></tr>
+                  <tr><td class="jersey">11</td><td>Martin Souček</td></tr>
+                  <tr><td class="jersey">12</td><td>Jiří Dvořák</td></tr>
+                  <tr><td class="jersey">14</td><td>Pavel Šimánek</td></tr>
+                  <tr><td class="jersey">16</td><td>Tomáš Žáček</td></tr>
+                  <tr><td class="jersey">18</td><td>Radek Vlček</td></tr>
+                  <tr><td class="jersey">22</td><td>Martin Kratochvíl</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- HANÁCKÁ LEGIE -->
+            <div class="lineup-col">
+              <div class="lineup-col-head">
+                <span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>
+                Hanácká legie
+              </div>
+              <table class="lineup-table">
+                <tbody>
+                  <tr class="lineup-group"><td colspan="2">Brankáři</td></tr>
+                  <tr><td class="jersey">31</td><td>Radek Pospíšil</td></tr>
+                  <tr class="lineup-group"><td colspan="2">Obránci</td></tr>
+                  <tr><td class="jersey">5</td><td>Marek Vohraník</td></tr>
+                  <tr><td class="jersey">7</td><td>Jakub Krejzl</td></tr>
+                  <tr><td class="jersey">8</td><td>Petr Burda</td></tr>
+                  <tr><td class="jersey">55</td><td>Ondřej Karas</td></tr>
+                  <tr class="lineup-group"><td colspan="2">Útočníci</td></tr>
+                  <tr><td class="jersey">10</td><td>M. Kaczmarczyk</td></tr>
+                  <tr><td class="jersey">11</td><td>Michal Tinkl</td></tr>
+                  <tr><td class="jersey">14</td><td>Petr Srnec</td></tr>
+                  <tr><td class="jersey">17</td><td>Lukáš Pánek</td></tr>
+                  <tr><td class="jersey">19</td><td>Radek Horáček</td></tr>
+                  <tr><td class="jersey">21</td><td>Jiří Dvořák</td></tr>
+                  <tr><td class="jersey">24</td><td>Karel Vrána</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- H2H — vzájemné zápasy -->
+        <section class="panel">
+          <div class="panel-head">
+            <h2><svg class="icon"><use href="#i-history"></use></svg> Vzájemné zápasy</h2>
+            <span class="hint">Oriflame vs Han. legie · celkem 7 zápasů</span>
+          </div>
+
+          <!-- Bilance -->
+          <div class="h2h-summary">
+            <div class="h2h-stat win">
+              <span class="hs-val">4</span>
+              <span class="hs-lbl">Výhry Oriflame</span>
+            </div>
+            <div class="h2h-divider"></div>
+            <div class="h2h-stat draw">
+              <span class="hs-val">1</span>
+              <span class="hs-lbl">Remízy</span>
+            </div>
+            <div class="h2h-divider"></div>
+            <div class="h2h-stat loss">
+              <span class="hs-val">2</span>
+              <span class="hs-lbl">Výhry Han. legie</span>
+            </div>
+          </div>
+
+          <!-- Hlavičky týmů -->
+          <div class="h2h-team-hd">
+            <span style="display:flex;align-items:center;gap:6px"><span class="tlogo" style="width:20px;height:20px"><img src="assets/img/teams/oriflame-software.png" alt="" style="width:16px;height:16px;object-fit:contain"></span>Oriflame</span>
+            <span style="display:flex;align-items:center;justify-content:flex-end;gap:6px">Han. legie<span class="tlogo" style="width:20px;height:20px"><img src="assets/img/teams/hanacka-legie.png" alt="" style="width:16px;height:16px;object-fit:contain"></span></span>
+          </div>
+
+          <!-- Historia zápasů -->
+          <table class="stat-table">
+            <thead>
+              <tr>
+                <th class="l" style="width:90px">Datum</th>
+                <th class="l">Fáze</th>
+                <th style="min-width:32px">OR</th>
+                <th style="font-size:11px;color:var(--mu)">vs</th>
+                <th style="min-width:32px">HL</th>
+                <th class="l" style="font-size:12px;color:var(--mu)">Místo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:rgba(40,64,127,.04)">
+                <td class="l" style="font-size:12.5px;font-weight:600">8. 4. 2026</td>
+                <td class="l" style="font-size:12.5px">Finále z.4</td>
+                <td class="pts" style="color:var(--win)">4</td>
+                <td style="color:var(--mu);font-size:12px">:</td>
+                <td class="pts">3</td>
+                <td class="l" style="font-size:12px;color:var(--mu)">ZS Olomouc</td>
+              </tr>
+              <tr>
+                <td class="l" style="font-size:12.5px;font-weight:600">4. 4. 2026</td>
+                <td class="l" style="font-size:12.5px">Finále z.3</td>
+                <td class="pts">2</td>
+                <td style="color:var(--mu);font-size:12px">:</td>
+                <td class="pts" style="color:var(--win)">3</td>
+                <td class="l" style="font-size:12px;color:var(--mu)">ZS Olomouc</td>
+              </tr>
+              <tr>
+                <td class="l" style="font-size:12.5px;font-weight:600">1. 4. 2026</td>
+                <td class="l" style="font-size:12.5px">Finále z.2</td>
+                <td class="pts" style="color:var(--win)">5</td>
+                <td style="color:var(--mu);font-size:12px">:</td>
+                <td class="pts">2</td>
+                <td class="l" style="font-size:12px;color:var(--mu)">ZS Olomouc</td>
+              </tr>
+              <tr>
+                <td class="l" style="font-size:12.5px;font-weight:600">28. 3. 2026</td>
+                <td class="l" style="font-size:12.5px">Finále z.1</td>
+                <td class="pts" style="color:var(--win)">3</td>
+                <td style="color:var(--mu);font-size:12px">:</td>
+                <td class="pts">1</td>
+                <td class="l" style="font-size:12px;color:var(--mu)">ZS Olomouc</td>
+              </tr>
+              <tr>
+                <td class="l" style="font-size:12.5px;font-weight:600">15. 3. 2026</td>
+                <td class="l" style="font-size:12.5px">ZČ · 9. kolo</td>
+                <td class="pts">2</td>
+                <td style="color:var(--mu);font-size:12px">:</td>
+                <td class="pts" style="color:var(--win)">4</td>
+                <td class="l" style="font-size:12px;color:var(--mu)">ZS Olomouc</td>
+              </tr>
+              <tr>
+                <td class="l" style="font-size:12.5px;font-weight:600">22. 11. 2025</td>
+                <td class="l" style="font-size:12.5px">ZČ · 4. kolo</td>
+                <td class="pts" style="color:var(--win)">4</td>
+                <td style="color:var(--mu);font-size:12px">:</td>
+                <td class="pts">4</td>
+                <td class="l" style="font-size:12px;color:var(--mu)">ZS Olomouc</td>
+              </tr>
+              <tr>
+                <td class="l" style="font-size:12.5px;font-weight:600">18. 4. 2025</td>
+                <td class="l" style="font-size:12.5px">Fin. 2024/25</td>
+                <td class="pts" style="color:var(--win)">3</td>
+                <td style="color:var(--mu);font-size:12px">:</td>
+                <td class="pts">2</td>
+                <td class="l" style="font-size:12px;color:var(--mu)">ZS Olomouc</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="col-md-4">
+      <div class="vstack">
+
+        <section class="panel">
+          <div class="panel-head"><h2><svg class="icon"><use href="#i-info"></use></svg> Informace</h2></div>
+          <ul class="info-list">
+            <li><span class="il-label">Datum</span><span class="il-val">8. dubna 2026</span></li>
+            <li><span class="il-label">Čas</span><span class="il-val">18:00</span></li>
+            <li><span class="il-label">Hala</span><span class="il-val">ZS Olomouc</span></li>
+            <li><span class="il-label">Fáze</span><span class="il-val">Finále</span></li>
+            <li><span class="il-label">Zápas v sérii</span><span class="il-val">4. ze 7</span></li>
+            <li><span class="il-label">Góly (domácí)</span><span class="il-val">4</span></li>
+            <li><span class="il-label">Góly (hosté)</span><span class="il-val">3</span></li>
+            <li><span class="il-label">Tresty celkem</span><span class="il-val">4 × 2 min</span></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Série — Finále</h2><span class="hint">nejlepší z 5</span></div>
+          <div class="serie-row">
+            <div class="serie-team"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame</div>
+            <div class="serie-wins champ">2</div>
+          </div>
+          <div class="serie-row">
+            <div class="serie-team"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Hanácká legie</div>
+            <div class="serie-wins">1</div>
+          </div>
+          <div class="panel-foot" style="text-align:left;font-size:13px;color:var(--mu)">Oriflame vede sérii 2–1</div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Tabulka OHSL</h2><span class="hint">po ZČ</span></div>
+          <table class="stat-table">
+            <thead><tr><th class="rank">#</th><th class="l">Klub</th><th>B</th></tr></thead>
+            <tbody>
+              <tr class="q"><td class="rank">1</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td><td class="pts">30</td></tr>
+              <tr class="q"><td class="rank">2</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span>HC 61</span></td><td class="pts">22</td></tr>
+              <tr class="q"><td class="rank">3</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td><td class="pts">21</td></tr>
+              <tr class="q"><td class="rank">4</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td><td class="pts">19</td></tr>
+              <tr class="q"><td class="rank">7</td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame</span></td><td class="pts">12</td></tr>
+            </tbody>
+          </table>
+          <div class="panel-foot"><a href="tabulka.html">Podrobná tabulka <svg class="icon"><use href="#i-chevron"></use></svg></a></div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/img/ohsl-foot.png" alt="OHSL">
+  <div><a class="social" href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a></div>
+  OHSL — Olomouc Hockey Super League · © 2026
+</footer>
+
+<script>
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+</script>
+</body>
+</html>

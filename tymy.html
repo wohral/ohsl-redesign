@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Týmy — OHSL 2025/26</title>
+<link rel="icon" href="assets/img/ohsl-foot.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=3">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</svg>
+
+<header class="site-header">
+  <a class="brand-logo" href="index.html"><img src="assets/img/ohsl-logo.png" alt="OHSL — Olomouc Hockey Super League"></a>
+  <div class="partners-inline">
+    <img src="assets/img/partners/hanacka-sportovni.jpg" alt="Hanácká sportovní">
+    <img src="assets/img/partners/iph.jpg" alt="IPH">
+    <img src="assets/img/partners/olomoucky-denik.png" alt="Olomoucký deník.cz">
+    <img src="assets/img/partners/ddsport.jpg" alt="ddsport">
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Domů</a>
+      <a href="tymy.html" class="active">Týmy</a>
+      <a href="zapas.html">Zápasy</a>
+      <a href="bodovani.html">Statistiky</a>
+      <a href="#">Aktuality</a>
+      <a href="#">Ke stažení</a>
+      <a href="#">Partneři</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"></use></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="index.html">Domů</a><span class="sep">›</span>
+    <span>Týmy</span>
+  </nav>
+
+  <!-- PŘEHLED TÝMŮ -->
+  <div class="page-hd">
+    <div>
+      <h1>Týmy OHSL</h1>
+      <span class="sub">2025/26 · 11 týmů</span>
+    </div>
+  </div>
+
+  <div class="teams-grid">
+
+    <a class="team-card" href="#soupiska">
+      <div class="tc-logo"><img src="assets/img/teams/kaceri-litovel.png" alt="Kačeři Litovel"></div>
+      <div class="tc-info">
+        <div class="tc-name">Kačeři Litovel</div>
+        <div class="tc-meta"><span class="tc-rank">1.</span><span class="tc-pts">30 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/hc-61-olomouc.png" alt="HC 61 Olomouc"></div>
+      <div class="tc-info">
+        <div class="tc-name">HC 61 Olomouc</div>
+        <div class="tc-meta"><span class="tc-rank">2.</span><span class="tc-pts">22 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/beerboys-prostejov.png" alt="Beerboys Prostějov"></div>
+      <div class="tc-info">
+        <div class="tc-name">Beerboys Prostějov</div>
+        <div class="tc-meta"><span class="tc-rank">3.</span><span class="tc-pts">21 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/hanacka-legie.png" alt="Hanácká legie"></div>
+      <div class="tc-info">
+        <div class="tc-name">Hanácká legie</div>
+        <div class="tc-meta"><span class="tc-rank">4.</span><span class="tc-pts">19 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/hrebci-skrben.png" alt="Hřebci Skrbeň"></div>
+      <div class="tc-info">
+        <div class="tc-name">Hřebci Skrbeň</div>
+        <div class="tc-meta"><span class="tc-rank">5.</span><span class="tc-pts">18 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/old-boys.png" alt="Old Boys"></div>
+      <div class="tc-info">
+        <div class="tc-name">Old Boys</div>
+        <div class="tc-meta"><span class="tc-rank">6.</span><span class="tc-pts">13 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/oriflame-software.png" alt="Oriflame Software"></div>
+      <div class="tc-info">
+        <div class="tc-name">Oriflame Software</div>
+        <div class="tc-meta"><span class="tc-rank">7.</span><span class="tc-pts">12 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt="Medojedi Chválkovice"></div>
+      <div class="tc-info">
+        <div class="tc-name">Medojedi Chválkovice</div>
+        <div class="tc-meta"><span class="tc-rank">8.</span><span class="tc-pts">11 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/stars-valec.png" alt="Stars Válec"></div>
+      <div class="tc-info">
+        <div class="tc-name">Stars Válec</div>
+        <div class="tc-meta"><span class="tc-rank">9.</span><span class="tc-pts">10 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/kohoti-olomouc.png" alt="Kohóti Olomouc"></div>
+      <div class="tc-info">
+        <div class="tc-name">Kohóti Olomouc</div>
+        <div class="tc-meta"><span class="tc-rank">10.</span><span class="tc-pts">3 b</span></div>
+      </div>
+    </a>
+
+    <a class="team-card" href="#">
+      <div class="tc-logo"><img src="assets/img/teams/jesteri-twin.png" alt="Ještěři TWIN"></div>
+      <div class="tc-info">
+        <div class="tc-name">Ještěři TWIN</div>
+        <div class="tc-meta"><span class="tc-rank">11.</span><span class="tc-pts">1 b</span></div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- DETAIL TÝMU — KAČEŘI LITOVEL (příklad soupisky) -->
+  <div id="soupiska" style="margin-top:32px">
+    <div class="page-hd" style="margin-top:0">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span class="tlogo" style="width:52px;height:52px"><img src="assets/img/teams/kaceri-litovel.png" alt="Kačeři Litovel" style="width:44px;height:44px;object-fit:contain"></span>
+        <div>
+          <h2 style="margin:0;font-size:22px;font-weight:700;color:var(--tx)">Kačeři Litovel</h2>
+          <span class="sub">Soupiska 2025/26 · 1. místo, 30 bodů</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--mu)">
+        <span><svg class="icon" style="vertical-align:-3px"><use href="#i-pin"></use></svg> ZS Litovel</span>
+        <span><svg class="icon" style="vertical-align:-3px"><use href="#i-users"></use></svg> 16 hráčů</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <section class="panel" style="overflow-x:auto">
+
+          <!-- BRANKÁŘI -->
+          <div class="roster-pos-head">Brankáři</div>
+          <table class="stat-table roster-table">
+            <thead>
+              <tr>
+                <th style="width:36px">#</th>
+                <th class="l">Jméno</th>
+                <th title="Průměrný počet obdržených gólů">ø</th>
+                <th title="Zápasy v základní části">ZČ</th>
+                <th title="Zápasy v play-off">PO</th>
+                <th title="Góly">G</th>
+                <th title="Asistence">A</th>
+                <th title="Body">B</th>
+                <th title="Trestné minuty">TM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rank">1</td>
+                <td class="l"><strong>Marek Dostál</strong></td>
+                <td>2.1</td><td>10</td><td>4</td><td>0</td><td>0</td><td class="pts">0</td><td>0</td>
+              </tr>
+              <tr>
+                <td class="rank">30</td>
+                <td class="l"><strong>Tomáš Kudela</strong></td>
+                <td>3.4</td><td>3</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td><td>0</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- OBRÁNCI -->
+          <div class="roster-pos-head">Obránci</div>
+          <table class="stat-table roster-table">
+            <thead>
+              <tr>
+                <th style="width:36px">#</th>
+                <th class="l">Jméno</th>
+                <th title="Průměrný počet obdržených gólů">ø</th>
+                <th title="Zápasy v základní části">ZČ</th>
+                <th title="Zápasy v play-off">PO</th>
+                <th title="Góly">G</th>
+                <th title="Asistence">A</th>
+                <th title="Body">B</th>
+                <th title="Trestné minuty">TM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rank">4</td>
+                <td class="l"><strong>Jan Dvořák</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>1</td><td>3</td><td class="pts">4</td><td>4</td>
+              </tr>
+              <tr>
+                <td class="rank">5</td>
+                <td class="l"><strong>Petr Horáček</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>0</td><td>2</td><td class="pts">2</td><td>6</td>
+              </tr>
+              <tr>
+                <td class="rank">6</td>
+                <td class="l"><strong>Milan Novotný</strong></td>
+                <td>—</td><td>9</td><td>4</td><td>1</td><td>1</td><td class="pts">2</td><td>2</td>
+              </tr>
+              <tr>
+                <td class="rank">7</td>
+                <td class="l"><strong>Radek Blažek</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>0</td><td>2</td><td class="pts">2</td><td>10</td>
+              </tr>
+              <tr>
+                <td class="rank">8</td>
+                <td class="l"><strong>Martin Krejčí</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>0</td><td>1</td><td class="pts">1</td><td>4</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ÚTOČNÍCI -->
+          <div class="roster-pos-head">Útočníci</div>
+          <table class="stat-table roster-table">
+            <thead>
+              <tr>
+                <th style="width:36px">#</th>
+                <th class="l">Jméno</th>
+                <th title="Průměrný počet obdržených gólů">ø</th>
+                <th title="Zápasy v základní části">ZČ</th>
+                <th title="Zápasy v play-off">PO</th>
+                <th title="Góly">G</th>
+                <th title="Asistence">A</th>
+                <th title="Body">B</th>
+                <th title="Trestné minuty">TM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rank">10</td>
+                <td class="l"><strong>Tomáš Vlček</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>8</td><td>6</td><td class="pts">14</td><td>2</td>
+              </tr>
+              <tr>
+                <td class="rank">11</td>
+                <td class="l"><strong>Ondřej Petráš</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>4</td><td>7</td><td class="pts">11</td><td>2</td>
+              </tr>
+              <tr>
+                <td class="rank">12</td>
+                <td class="l"><strong>Pavel Hrubý</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>2</td><td>3</td><td class="pts">5</td><td>0</td>
+              </tr>
+              <tr>
+                <td class="rank">13</td>
+                <td class="l"><strong>Lukáš Fojtík</strong></td>
+                <td>—</td><td>9</td><td>4</td><td>2</td><td>2</td><td class="pts">4</td><td>4</td>
+              </tr>
+              <tr>
+                <td class="rank">14</td>
+                <td class="l"><strong>Jiří Kopecký</strong></td>
+                <td>—</td><td>10</td><td>3</td><td>1</td><td>2</td><td class="pts">3</td><td>2</td>
+              </tr>
+              <tr>
+                <td class="rank">15</td>
+                <td class="l"><strong>David Pospíšil</strong></td>
+                <td>—</td><td>8</td><td>2</td><td>1</td><td>2</td><td class="pts">3</td><td>0</td>
+              </tr>
+              <tr>
+                <td class="rank">16</td>
+                <td class="l"><strong>Patrik Jonáš</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>1</td><td>1</td><td class="pts">2</td><td>4</td>
+              </tr>
+              <tr>
+                <td class="rank">17</td>
+                <td class="l"><strong>René Šimák</strong></td>
+                <td>—</td><td>7</td><td>2</td><td>1</td><td>0</td><td class="pts">1</td><td>2</td>
+              </tr>
+              <tr>
+                <td class="rank">21</td>
+                <td class="l"><strong>Aleš Kovář</strong></td>
+                <td>—</td><td>10</td><td>4</td><td>0</td><td>1</td><td class="pts">1</td><td>4</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+      </div>
+
+      <div class="col-md-4">
+        <div class="vstack">
+          <section class="panel">
+            <div class="panel-head"><h2>Statistiky týmu</h2><span class="hint">ZČ 2025/26</span></div>
+            <ul class="info-list">
+              <li><span class="il-label">Zápasy</span><span class="il-val">10</span></li>
+              <li><span class="il-label">Výhry</span><span class="il-val" style="color:var(--win);font-weight:700">10</span></li>
+              <li><span class="il-label">Remízy</span><span class="il-val">0</span></li>
+              <li><span class="il-label">Prohry</span><span class="il-val">0</span></li>
+              <li><span class="il-label">Vstřelené góly</span><span class="il-val">58</span></li>
+              <li><span class="il-label">Obdržené góly</span><span class="il-val">23</span></li>
+              <li><span class="il-label">Body</span><span class="il-val" style="font-weight:700;color:var(--head)">30</span></li>
+              <li><span class="il-label">Pořadí</span><span class="il-val" style="font-weight:700">1. místo</span></li>
+            </ul>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head"><h2>Posledních 5 zápasů</h2></div>
+            <a class="match-row res-row" href="zapas.html">
+              <span class="mr-date">Fin · 8. 4.</span>
+              <span class="mr-home"><span class="mr-name">Kačeři</span><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span></span>
+              <span class="mr-scores"><span class="mr-score" style="background:var(--win)">5</span><span class="mr-score">2</span></span>
+              <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span><span class="mr-name">Beerboys</span></span>
+            </a>
+            <a class="match-row res-row" href="#">
+              <span class="mr-date">Sf · 1. 4.</span>
+              <span class="mr-home"><span class="mr-name">HC 61</span><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span></span>
+              <span class="mr-scores"><span class="mr-score">1</span><span class="mr-score" style="background:var(--win)">4</span></span>
+              <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span><span class="mr-name">Kačeři</span></span>
+            </a>
+            <a class="match-row res-row" href="#">
+              <span class="mr-date">Sf · 25. 3.</span>
+              <span class="mr-home"><span class="mr-name">Kačeři</span><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span></span>
+              <span class="mr-scores"><span class="mr-score" style="background:var(--win)">6</span><span class="mr-score">1</span></span>
+              <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span><span class="mr-name">HC 61</span></span>
+            </a>
+            <a class="match-row res-row" href="#">
+              <span class="mr-date">ZČ · 15. 3.</span>
+              <span class="mr-home"><span class="mr-name">Kačeři</span><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span></span>
+              <span class="mr-scores"><span class="mr-score" style="background:var(--win)">4</span><span class="mr-score">2</span></span>
+              <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span><span class="mr-name">Han. legie</span></span>
+            </a>
+            <a class="match-row res-row" href="#">
+              <span class="mr-date">ZČ · 8. 3.</span>
+              <span class="mr-home"><span class="mr-name">Old Boys</span><span class="tlogo"><img src="assets/img/teams/old-boys.png" alt=""></span></span>
+              <span class="mr-scores"><span class="mr-score">0</span><span class="mr-score" style="background:var(--win)">7</span></span>
+              <span class="mr-away"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span><span class="mr-name">Kačeři</span></span>
+            </a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <img src="assets/img/ohsl-foot.png" alt="OHSL">
+  <div><a class="social" href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a></div>
+  OHSL — Olomouc Hockey Super League · © 2026
+</footer>
+
+<script>
+  var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+</script>
+</body>
+</html>

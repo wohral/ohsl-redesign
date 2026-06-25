@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistiky — OHSL 2025/26</title>
+<link rel="icon" href="assets/img/ohsl-foot.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css?v=3">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu"   viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8a1 1 0 0 1 1-1z"/></symbol>
+</svg>
+
+<header class="site-header">
+  <a class="brand-logo" href="index.html"><img src="assets/img/ohsl-logo.png" alt="OHSL"></a>
+  <div class="partners-inline">
+    <img src="assets/img/partners/hanacka-sportovni.jpg" alt="Hanácká sportovní">
+    <img src="assets/img/partners/iph.jpg" alt="IPH">
+    <img src="assets/img/partners/olomoucky-denik.png" alt="Olomoucký deník.cz">
+    <img src="assets/img/partners/ddsport.jpg" alt="ddsport">
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Domů</a>
+      <a href="tymy.html">Týmy</a>
+      <a href="zapas.html">Zápasy</a>
+      <a href="bodovani.html" class="active">Statistiky</a>
+      <a href="#">Aktuality</a>
+      <a href="#">Ke stažení</a>
+      <a href="#">Partneři</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"></use></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="index.html">Domů</a><span class="sep">›</span>
+    <span>Statistiky</span>
+  </nav>
+
+  <div class="page-hd">
+    <div>
+      <h1>Statistiky</h1>
+      <span class="sub">OHSL 2025/26 · Základní část</span>
+    </div>
+    <select class="season-select" onchange="">
+      <option selected>2025/26 — 10. sezóna</option>
+      <option>2024/25 — 9. sezóna</option>
+      <option>2023/24 — 8. sezóna</option>
+    </select>
+  </div>
+
+  <section class="panel" style="overflow:hidden;margin-top:0">
+
+    <!-- TABY -->
+    <div class="stat-tabs" id="statTabs">
+      <button class="stat-tab active" data-tab="bodovani">Kanadské bodování</button>
+      <button class="stat-tab" data-tab="strelci">Střelci</button>
+      <button class="stat-tab" data-tab="brankari">Brankáři</button>
+    </div>
+
+    <!-- ===== TAB: KANADSKÉ BODOVÁNÍ ===== -->
+    <div class="stat-pane active" id="tab-bodovani">
+
+      <!-- FILTRY TÝMŮ -->
+      <div class="filter-bar" id="teamFilter">
+        <span class="filter-label">Tým:</span>
+        <button class="filter-btn active" data-team="all">Vše</button>
+        <button class="filter-btn" data-team="kaceri-litovel">Kačeři</button>
+        <button class="filter-btn" data-team="hc-61-olomouc">HC 61</button>
+        <button class="filter-btn" data-team="beerboys-prostejov">Beerboys</button>
+        <button class="filter-btn" data-team="hanacka-legie">Han. legie</button>
+        <button class="filter-btn" data-team="hrebci-skrben">Hřebci</button>
+        <button class="filter-btn" data-team="old-boys">Old Boys</button>
+        <button class="filter-btn" data-team="oriflame-software">Oriflame</button>
+        <button class="filter-btn" data-team="medojedi-chvalkovice">Medojedi</button>
+        <button class="filter-btn" data-team="stars-valec">Stars</button>
+        <button class="filter-btn" data-team="kohoti-olomouc">Kohóti</button>
+        <button class="filter-btn" data-team="jesteri-twin">Ještěři</button>
+      </div>
+
+      <!-- FILTR POZICE -->
+      <div class="pos-filter" id="posFilter">
+        <span class="pos-filter-label">Pozice:</span>
+        <button class="filter-btn active" data-pos="all">Vše</button>
+        <button class="filter-btn" data-pos="u">Útočník</button>
+        <button class="filter-btn" data-pos="o">Obránce</button>
+      </div>
+
+      <!-- TABULKA -->
+      <div style="overflow-x:auto">
+        <table class="stat-table" id="scoringTable">
+          <thead>
+            <tr>
+              <th class="rank">#</th>
+              <th class="l" data-sort="name">Hráč</th>
+              <th class="l" style="font-size:11px">Tým</th>
+              <th style="font-size:11px;color:var(--mu)">Pos.</th>
+              <th data-sort="z" title="Odehrané zápasy">Z</th>
+              <th data-sort="g" title="Góly">G</th>
+              <th data-sort="a" title="Asistence">A</th>
+              <th data-sort="b" title="Kanadské body" class="desc">B</th>
+              <th data-sort="tm" title="Trestné minuty">TM</th>
+              <th data-sort="gz" title="Průměr gólů na zápas">G/Z</th>
+              <th data-sort="az" title="Průměr asistencí na zápas">A/Z</th>
+              <th data-sort="bz" title="Průměr bodů na zápas">B/Z</th>
+            </tr>
+          </thead>
+          <tbody id="scoringBody">
+            <tr data-team="medojedi-chvalkovice" data-pos="u" data-z="10" data-g="14" data-a="10" data-b="24" data-tm="6">
+              <td class="rank">1</td>
+              <td class="l"><a href="hrac.html" style="color:var(--head);font-weight:700;text-decoration:none">Petr Palán</a></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Medojedi</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>14</td><td>10</td><td class="pts">24</td><td>6</td>
+              <td style="color:var(--mu);font-size:12.5px">1.40</td>
+              <td style="color:var(--mu);font-size:12.5px">1.00</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">2.40</td>
+            </tr>
+            <tr data-team="hanacka-legie" data-pos="u" data-z="10" data-g="11" data-a="8" data-b="19" data-tm="4">
+              <td class="rank">2</td>
+              <td class="l"><strong>M. Kaczmarczyk</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>11</td><td>8</td><td class="pts">19</td><td>4</td>
+              <td style="color:var(--mu);font-size:12.5px">1.10</td>
+              <td style="color:var(--mu);font-size:12.5px">0.80</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.90</td>
+            </tr>
+            <tr data-team="hrebci-skrben" data-pos="u" data-z="10" data-g="9" data-a="8" data-b="17" data-tm="2">
+              <td class="rank">3</td>
+              <td class="l"><strong>M. Jančík</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt=""></span>Hřebci</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>9</td><td>8</td><td class="pts">17</td><td>2</td>
+              <td style="color:var(--mu);font-size:12.5px">0.90</td>
+              <td style="color:var(--mu);font-size:12.5px">0.80</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.70</td>
+            </tr>
+            <tr data-team="stars-valec" data-pos="u" data-z="10" data-g="8" data-a="8" data-b="16" data-tm="12">
+              <td class="rank">4</td>
+              <td class="l"><strong>M. Sklenář</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt=""></span>Stars Válec</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>8</td><td>8</td><td class="pts">16</td><td>12</td>
+              <td style="color:var(--mu);font-size:12.5px">0.80</td>
+              <td style="color:var(--mu);font-size:12.5px">0.80</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.60</td>
+            </tr>
+            <tr data-team="hanacka-legie" data-pos="u" data-z="10" data-g="7" data-a="9" data-b="16" data-tm="4">
+              <td class="rank">5</td>
+              <td class="l"><strong>Michal Tinkl</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>7</td><td>9</td><td class="pts">16</td><td>4</td>
+              <td style="color:var(--mu);font-size:12.5px">0.70</td>
+              <td style="color:var(--mu);font-size:12.5px">0.90</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.60</td>
+            </tr>
+            <tr data-team="kaceri-litovel" data-pos="u" data-z="10" data-g="8" data-a="6" data-b="14" data-tm="2">
+              <td class="rank">6</td>
+              <td class="l"><strong>Tomáš Vlček</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>8</td><td>6</td><td class="pts">14</td><td>2</td>
+              <td style="color:var(--mu);font-size:12.5px">0.80</td>
+              <td style="color:var(--mu);font-size:12.5px">0.60</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.40</td>
+            </tr>
+            <tr data-team="hc-61-olomouc" data-pos="u" data-z="10" data-g="6" data-a="7" data-b="13" data-tm="8">
+              <td class="rank">7</td>
+              <td class="l"><strong>Jiří Horáček</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span>HC 61</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>6</td><td>7</td><td class="pts">13</td><td>8</td>
+              <td style="color:var(--mu);font-size:12.5px">0.60</td>
+              <td style="color:var(--mu);font-size:12.5px">0.70</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.30</td>
+            </tr>
+            <tr data-team="beerboys-prostejov" data-pos="u" data-z="10" data-g="7" data-a="5" data-b="12" data-tm="6">
+              <td class="rank">8</td>
+              <td class="l"><strong>Radek Kovář</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>7</td><td>5</td><td class="pts">12</td><td>6</td>
+              <td style="color:var(--mu);font-size:12.5px">0.70</td>
+              <td style="color:var(--mu);font-size:12.5px">0.50</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.20</td>
+            </tr>
+            <tr data-team="oriflame-software" data-pos="u" data-z="10" data-g="5" data-a="6" data-b="11" data-tm="4">
+              <td class="rank">9</td>
+              <td class="l"><a href="hrac.html" style="color:var(--head);font-weight:700;text-decoration:none">Filip Křen</a></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>5</td><td>6</td><td class="pts">11</td><td>4</td>
+              <td style="color:var(--mu);font-size:12.5px">0.50</td>
+              <td style="color:var(--mu);font-size:12.5px">0.60</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.10</td>
+            </tr>
+            <tr data-team="kaceri-litovel" data-pos="o" data-z="10" data-g="4" data-a="7" data-b="11" data-tm="2">
+              <td class="rank">10</td>
+              <td class="l"><strong>Ondřej Petráš</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">O</td>
+              <td>10</td><td>4</td><td>7</td><td class="pts">11</td><td>2</td>
+              <td style="color:var(--mu);font-size:12.5px">0.40</td>
+              <td style="color:var(--mu);font-size:12.5px">0.70</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.10</td>
+            </tr>
+            <tr data-team="old-boys" data-pos="u" data-z="10" data-g="5" data-a="5" data-b="10" data-tm="10">
+              <td class="rank">11</td>
+              <td class="l"><strong>Pavel Řezníček</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/old-boys.png" alt=""></span>Old Boys</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>5</td><td>5</td><td class="pts">10</td><td>10</td>
+              <td style="color:var(--mu);font-size:12.5px">0.50</td>
+              <td style="color:var(--mu);font-size:12.5px">0.50</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.00</td>
+            </tr>
+            <tr data-team="hrebci-skrben" data-pos="o" data-z="10" data-g="4" data-a="6" data-b="10" data-tm="0">
+              <td class="rank">12</td>
+              <td class="l"><strong>Pavel Nový</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt=""></span>Hřebci</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">O</td>
+              <td>10</td><td>4</td><td>6</td><td class="pts">10</td><td>0</td>
+              <td style="color:var(--mu);font-size:12.5px">0.40</td>
+              <td style="color:var(--mu);font-size:12.5px">0.60</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">1.00</td>
+            </tr>
+            <tr data-team="hanacka-legie" data-pos="u" data-z="10" data-g="3" data-a="6" data-b="9" data-tm="4">
+              <td class="rank">13</td>
+              <td class="l"><strong>Petr Srnec</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>3</td><td>6</td><td class="pts">9</td><td>4</td>
+              <td style="color:var(--mu);font-size:12.5px">0.30</td>
+              <td style="color:var(--mu);font-size:12.5px">0.60</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.90</td>
+            </tr>
+            <tr data-team="beerboys-prostejov" data-pos="u" data-z="10" data-g="4" data-a="4" data-b="8" data-tm="14">
+              <td class="rank">14</td>
+              <td class="l"><strong>Martin Čermák</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>4</td><td>4</td><td class="pts">8</td><td>14</td>
+              <td style="color:var(--mu);font-size:12.5px">0.40</td>
+              <td style="color:var(--mu);font-size:12.5px">0.40</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.80</td>
+            </tr>
+            <tr data-team="hc-61-olomouc" data-pos="o" data-z="10" data-g="3" data-a="5" data-b="8" data-tm="2">
+              <td class="rank">15</td>
+              <td class="l"><strong>Lukáš Hampl</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span>HC 61</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">O</td>
+              <td>10</td><td>3</td><td>5</td><td class="pts">8</td><td>2</td>
+              <td style="color:var(--mu);font-size:12.5px">0.30</td>
+              <td style="color:var(--mu);font-size:12.5px">0.50</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.80</td>
+            </tr>
+            <tr data-team="oriflame-software" data-pos="o" data-z="10" data-g="3" data-a="5" data-b="8" data-tm="2">
+              <td class="rank">16</td>
+              <td class="l"><strong>Tomáš Blaha</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">O</td>
+              <td>10</td><td>3</td><td>5</td><td class="pts">8</td><td>2</td>
+              <td style="color:var(--mu);font-size:12.5px">0.30</td>
+              <td style="color:var(--mu);font-size:12.5px">0.50</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.80</td>
+            </tr>
+            <tr data-team="medojedi-chvalkovice" data-pos="u" data-z="10" data-g="2" data-a="5" data-b="7" data-tm="6">
+              <td class="rank">17</td>
+              <td class="l"><strong>Jakub Fiala</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Medojedi</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>2</td><td>5</td><td class="pts">7</td><td>6</td>
+              <td style="color:var(--mu);font-size:12.5px">0.20</td>
+              <td style="color:var(--mu);font-size:12.5px">0.50</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.70</td>
+            </tr>
+            <tr data-team="stars-valec" data-pos="u" data-z="10" data-g="3" data-a="3" data-b="6" data-tm="4">
+              <td class="rank">18</td>
+              <td class="l"><strong>Ondřej Holek</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt=""></span>Stars Válec</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>3</td><td>3</td><td class="pts">6</td><td>4</td>
+              <td style="color:var(--mu);font-size:12.5px">0.30</td>
+              <td style="color:var(--mu);font-size:12.5px">0.30</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.60</td>
+            </tr>
+            <tr data-team="old-boys" data-pos="o" data-z="10" data-g="2" data-a="4" data-b="6" data-tm="8">
+              <td class="rank">19</td>
+              <td class="l"><strong>Miroslav Šindler</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/old-boys.png" alt=""></span>Old Boys</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">O</td>
+              <td>10</td><td>2</td><td>4</td><td class="pts">6</td><td>8</td>
+              <td style="color:var(--mu);font-size:12.5px">0.20</td>
+              <td style="color:var(--mu);font-size:12.5px">0.40</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.60</td>
+            </tr>
+            <tr data-team="kaceri-litovel" data-pos="u" data-z="10" data-g="2" data-a="3" data-b="5" data-tm="0">
+              <td class="rank">20</td>
+              <td class="l"><strong>Pavel Hrubý</strong></td>
+              <td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td>
+              <td style="font-size:11.5px;color:var(--mu)">Ú</td>
+              <td>10</td><td>2</td><td>3</td><td class="pts">5</td><td>0</td>
+              <td style="color:var(--mu);font-size:12.5px">0.20</td>
+              <td style="color:var(--mu);font-size:12.5px">0.30</td>
+              <td style="color:var(--mu);font-size:12.5px;font-weight:700;color:var(--head)">0.50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- STRÁNKOVÁNÍ -->
+      <div class="pagination" id="pagination">
+        <button class="pg-btn" id="pgPrev" disabled>‹</button>
+        <button class="pg-btn active" data-page="1">1</button>
+        <button class="pg-btn" data-page="2">2</button>
+        <span class="pg-info" id="pgInfo">1–10 z 20</span>
+        <button class="pg-btn" id="pgNext">›</button>
+      </div>
+    </div>
+
+    <!-- ===== TAB: STŘELCI ===== -->
+    <div class="stat-pane" id="tab-strelci">
+      <div style="overflow-x:auto">
+        <table class="stat-table">
+          <thead>
+            <tr>
+              <th class="rank">#</th>
+              <th class="l" data-sort="sname">Hráč</th>
+              <th class="l" style="font-size:11px">Tým</th>
+              <th data-sort="sg" title="Góly" class="desc">G</th>
+              <th data-sort="sz" title="Odehrané zápasy">Z</th>
+              <th data-sort="sgz" title="Průměr gólů na zápas">G/Z</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="rank">1</td><td class="l"><strong>Martin Kaczmarczyk</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td><td class="pts">19</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.90</td></tr>
+            <tr><td class="rank">2</td><td class="l"><strong>Petr Palán</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Medojedi</span></td><td class="pts">17</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.70</td></tr>
+            <tr><td class="rank">3</td><td class="l"><strong>Š. Karafiát</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td><td class="pts">15</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.50</td></tr>
+            <tr><td class="rank">4</td><td class="l"><a href="hrac.html" style="color:var(--head);font-weight:700;text-decoration:none">Filip Křen</a></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame</span></td><td class="pts">15</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.50</td></tr>
+            <tr><td class="rank">5</td><td class="l"><strong>Michal Sklenář</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Medojedi</span></td><td class="pts">14</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.40</td></tr>
+            <tr><td class="rank">6</td><td class="l"><strong>Petr Srnec</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td><td class="pts">14</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.40</td></tr>
+            <tr><td class="rank">7</td><td class="l"><strong>Martin Jančík</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hrebci-skrben.png" alt=""></span>Hřebci</span></td><td class="pts">14</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.40</td></tr>
+            <tr><td class="rank">8</td><td class="l"><strong>M. Hubička</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td><td class="pts">14</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.40</td></tr>
+            <tr><td class="rank">9</td><td class="l"><strong>Erik Štangler</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame</span></td><td class="pts">14</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.40</td></tr>
+            <tr><td class="rank">10</td><td class="l"><strong>J. Valouch</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt=""></span>Stars Válec</span></td><td class="pts">13</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.30</td></tr>
+            <tr><td class="rank">11</td><td class="l"><strong>Jiří Hloušek</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td><td class="pts">13</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.30</td></tr>
+            <tr><td class="rank">12</td><td class="l"><strong>Michal Tinkl</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td><td class="pts">13</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.30</td></tr>
+            <tr><td class="rank">13</td><td class="l"><strong>Filip Siegel</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/jesteri-twin.png" alt=""></span>Ještěři</span></td><td class="pts">13</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.30</td></tr>
+            <tr><td class="rank">14</td><td class="l"><strong>R. Světlík</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span>HC 61</span></td><td class="pts">12</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.20</td></tr>
+            <tr><td class="rank">15</td><td class="l"><strong>Robert Pryč</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/jesteri-twin.png" alt=""></span>Ještěři</span></td><td class="pts">12</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.20</td></tr>
+            <tr><td class="rank">16</td><td class="l"><strong>L. Dokoupil</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/stars-valec.png" alt=""></span>Stars Válec</span></td><td class="pts">11</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.10</td></tr>
+            <tr><td class="rank">17</td><td class="l"><strong>F. Koryťák</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/medojedi-chvalkovice.png" alt=""></span>Medojedi</span></td><td class="pts">11</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.10</td></tr>
+            <tr><td class="rank">18</td><td class="l"><strong>T. Karásek</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/oriflame-software.png" alt=""></span>Oriflame</span></td><td class="pts">10</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.00</td></tr>
+            <tr><td class="rank">19</td><td class="l"><strong>A. Pustějovský</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span>HC 61</span></td><td class="pts">10</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.00</td></tr>
+            <tr><td class="rank">20</td><td class="l"><strong>Lukáš Ballák</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td><td class="pts">10</td><td>10</td><td style="color:var(--mu);font-size:12.5px">1.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===== TAB: BRANKÁŘI ===== -->
+    <div class="stat-pane" id="tab-brankari">
+      <div style="overflow-x:auto">
+        <table class="stat-table">
+          <thead>
+            <tr>
+              <th class="rank">#</th>
+              <th class="l" data-sort="bname">Hráč</th>
+              <th class="l" style="font-size:11px">Tým</th>
+              <th data-sort="bz" title="Odehrané zápasy">Z</th>
+              <th data-sort="bv" title="Výhry">V</th>
+              <th data-sort="bp" title="Prohry">P</th>
+              <th data-sort="bog" title="Obdržené góly">OG</th>
+              <th data-sort="bprumer" title="Průměr obdržených gólů" class="asc">Průměr</th>
+              <th data-sort="bnula" title="Čistá konta">Nula</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="rank">1</td><td class="l"><strong>Michal Černý</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td><td>2</td><td>2</td><td>0</td><td>2</td><td class="pts" style="color:var(--win)">1.00</td><td>1</td></tr>
+            <tr><td class="rank">2</td><td class="l"><strong>Michael Vařeka</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td><td>4</td><td>8</td><td>2</td><td>21</td><td class="pts" style="color:var(--win)">1.80</td><td>0</td></tr>
+            <tr><td class="rank">3</td><td class="l"><strong>Martin Grepl</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/beerboys-prostejov.png" alt=""></span>Beerboys</span></td><td>4</td><td>2</td><td>2</td><td>11</td><td class="pts" style="color:var(--win)">1.83</td><td>0</td></tr>
+            <tr><td class="rank">4</td><td class="l"><strong>Petr Přikryl</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hc-61-olomouc.png" alt=""></span>HC 61</span></td><td>5</td><td>7</td><td>3</td><td>33</td><td class="pts">2.10</td><td>0</td></tr>
+            <tr><td class="rank">5</td><td class="l"><strong>Martin Glouzar</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td><td>1</td><td>1</td><td>0</td><td>2</td><td class="pts">2.00</td><td>0</td></tr>
+            <tr><td class="rank">6</td><td class="l"><strong>Jiří Krňávek</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td><td>4</td><td>9</td><td>0</td><td>24</td><td class="pts">2.67</td><td>1</td></tr>
+            <tr><td class="rank">7</td><td class="l"><strong>Tomáš Blažek</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td><td>7</td><td>5</td><td>5</td><td>57</td><td class="pts">2.90</td><td>0</td></tr>
+            <tr><td class="rank">8</td><td class="l"><strong>Marek Dostál</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kaceri-litovel.png" alt=""></span>Kačeři</span></td><td>10</td><td>10</td><td>0</td><td>21</td><td class="pts">2.10</td><td>2</td></tr>
+            <tr><td class="rank">9</td><td class="l"><strong>Radek Pospíšil</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/hanacka-legie.png" alt=""></span>Han. legie</span></td><td>4</td><td>3</td><td>4</td><td>19</td><td class="pts">3.17</td><td>0</td></tr>
+            <tr><td class="rank">10</td><td class="l"><strong>T. Slepička</strong></td><td class="l"><span class="team-cell"><span class="tlogo"><img src="assets/img/teams/kohoti-olomouc.png" alt=""></span>Kohóti</span></td><td>7</td><td>1</td><td>9</td><td>74</td><td class="pts" style="color:var(--loss)">8.22</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <img src="assets/img/ohsl-foot.png" alt="OHSL">
+  <div><a class="social" href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a></div>
+  OHSL — Olomouc Hockey Super League · © 2026
+</footer>
+
+<script>
+/* ---- Nav toggle ---- */
+var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
+
+/* ---- Stat taby ---- */
+document.querySelectorAll('.stat-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.stat-tab').forEach(function(b){b.classList.remove('active');});
+    document.querySelectorAll('.stat-pane').forEach(function(p){p.classList.remove('active');});
+    btn.classList.add('active');
+    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---- Filtr tým + pozice (kanadské bodování) ---- */
+var activeTeam='all', activePos='all';
+var PAGE_SIZE=10, currentPage=1;
+var allRows=Array.from(document.querySelectorAll('#scoringBody tr'));
+
+function applyFilters(){
+  var visible=allRows.filter(function(r){
+    var tOk=(activeTeam==='all'||r.dataset.team===activeTeam);
+    var pOk=(activePos==='all'||r.dataset.pos===activePos);
+    return tOk&&pOk;
+  });
+  var total=visible.length;
+  var start=(currentPage-1)*PAGE_SIZE;
+  var end=Math.min(start+PAGE_SIZE,total);
+  allRows.forEach(function(r){r.style.display='none';});
+  visible.slice(start,end).forEach(function(r,i){r.style.display='';r.querySelector('.rank').textContent=start+i+1;});
+  // stránkování info
+  document.getElementById('pgInfo').textContent=(start+1)+'–'+end+' z '+total;
+  document.getElementById('pgPrev').disabled=(currentPage===1);
+  document.getElementById('pgNext').disabled=(end>=total);
+  // čísla stránek
+  var pages=Math.ceil(total/PAGE_SIZE)||1;
+  document.querySelectorAll('.pg-btn[data-page]').forEach(function(b){
+    var p=parseInt(b.dataset.page);
+    b.classList.toggle('active',p===currentPage);
+    b.style.display=(p<=pages)?'':'none';
+  });
+}
+
+document.querySelectorAll('#teamFilter .filter-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('#teamFilter .filter-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    activeTeam=btn.dataset.team;
+    currentPage=1;
+    applyFilters();
+  });
+});
+document.querySelectorAll('#posFilter .filter-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('#posFilter .filter-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    activePos=btn.dataset.pos;
+    currentPage=1;
+    applyFilters();
+  });
+});
+document.getElementById('pgPrev').addEventListener('click',function(){if(currentPage>1){currentPage--;applyFilters();}});
+document.getElementById('pgNext').addEventListener('click',function(){currentPage++;applyFilters();});
+document.querySelectorAll('.pg-btn[data-page]').forEach(function(btn){
+  btn.addEventListener('click',function(){currentPage=parseInt(btn.dataset.page);applyFilters();});
+});
+
+/* ---- Řazení (sorting) ---- */
+var sortDir={};
+document.querySelectorAll('th[data-sort]').forEach(function(th){
+  th.addEventListener('click',function(){
+    var col=th.dataset.sort;
+    var table=th.closest('table');
+    var tbody=table.querySelector('tbody');
+    var rows=Array.from(tbody.querySelectorAll('tr'));
+    var asc=sortDir[col]!==true;
+    sortDir[col]=asc;
+    // Vizuální indikátor
+    table.querySelectorAll('th[data-sort]').forEach(function(x){x.classList.remove('asc','desc');});
+    th.classList.add(asc?'asc':'desc');
+    var colIdx=Array.from(th.parentNode.children).indexOf(th);
+    rows.sort(function(a,b){
+      var va=a.cells[colIdx]?a.cells[colIdx].textContent.trim():'';
+      var vb=b.cells[colIdx]?b.cells[colIdx].textContent.trim():'';
+      var na=parseFloat(va),nb=parseFloat(vb);
+      if(!isNaN(na)&&!isNaN(nb))return asc?na-nb:nb-na;
+      return asc?va.localeCompare(vb,'cs'):vb.localeCompare(va,'cs');
+    });
+    rows.forEach(function(r){tbody.appendChild(r);});
+    // Po seřazení obnovit čísla řádků
+    rows.forEach(function(r,i){var rk=r.querySelector('.rank');if(rk)rk.textContent=i+1;});
+  });
+});
+
+applyFilters();
+</script>
+</body>
+</html>
