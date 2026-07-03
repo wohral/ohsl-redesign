@@ -402,11 +402,15 @@ main { padding-bottom:24px; }
   .ps-box .psb-val { font-size:20px; }
   /* Sestavy tabulka */
   .lineup-table tr td, .lineup-table .lineup-group td { padding:6px 8px; }
-  /* Všechny tabulky (kromě standings-table) — na mobilu jen logo, bez názvu */
+  /* Všechny tabulky (kromě standings-table a home-table) — na mobilu jen logo, bez názvu */
   .stat-table .team-cell { gap:0; font-size:0; }
   .stat-table .team-cell .tlogo { display:inline-flex; }
-  .standings-table .team-cell { gap:8px; font-size:inherit; }
-  .standings-table .team-cell .tlogo { display:flex; }
+  .standings-table .team-cell, .home-table .team-cell { gap:8px; font-size:inherit; }
+  .standings-table .team-cell .tlogo, .home-table .team-cell .tlogo { display:flex; }
+  /* Úzké tabulky s víc sloupci (kariéra, poslední zápasy) — název týmu vidět, oříznutý na "..." */
+  .trunc-table .team-cell { gap:6px; font-size:inherit; max-width:96px; }
+  .trunc-table .team-cell .tlogo { display:flex; flex-shrink:0; }
+  .trunc-table .team-cell .tname { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
   /* Záhlaví — ellipsis pokud se nevejde */
   .stat-table th { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:48px; }
   .stat-table th.l { max-width:none; }
